@@ -30,14 +30,15 @@ var MongoClient = require('mongodb').MongoClient;
 	  var input5 = req.body.input5;
 	  var input6 = req.body.input6;
     const { spawn } = require('child_process');
-    const pyProg = spawn('python', ['C:/Users/Meghana/Desktop/RFmodelPredict.py', input1, input2, input3, input4, input5, input6]);
+    const pyProg = spawn('python', ['C:/Users/Arundhati/Desktop/Pycharm-edu/DAAlab/RFmodelPredict.py', input1, input2, input3, input4, input5, input6]);
 
     pyProg.stdout.on('data', function(data) {
 		console.log("in hello.py");
         console.log(data.toString());
+		var result = data.toString();
+		console.log(result);
+		res.send({'data': result});
     });
-	
-        res.render('predict-disp.ejs');  
 })
 
   
