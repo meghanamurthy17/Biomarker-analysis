@@ -1,0 +1,91 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      
+    <title>Property Application</title>
+      <!--Import bootstrap.css-->
+      <link type="text/css" rel="stylesheet" href="resources/css/bootstrap.min.css" />
+	  
+	  <!-- custom CSS -->
+ 
+		<style>
+        @font-face {
+            font-family: 'Roboto';
+            src: url('resources/fonts/roboto/Roboto-Regular.eot');
+            src: url('resources/fonts/roboto/Roboto-Regular.woff') format('woff'), 
+            url('resources/fonts/roboto/Roboto-Regular.ttf') format('truetype');
+            font-style: normal;
+            }
+            
+        body{font-family: "Roboto";
+		font-size:16px;
+		background-image: url("resources/bg3.jpg");
+		background-repeat: no-repeat ;
+		background-position : center;
+		}
+            
+		.width-30-pct{
+			width:30%;
+		}
+		 
+		.margin-bottom-1em{
+			margin-bottom:1em;
+		}
+.header img {
+  float: left;
+  width: 100px;
+  height: 100px;
+}
+
+.header h1 {
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+	</style>
+</head>
+
+    <body>
+
+<div class="container" ng-app="products" ng-controller="productCTRL">
+<br>	<h3>Hello, {{user}} !</h3>
+    <div class="row">
+	  <div class="header">
+		 <img src="resources/logo2.jpg"> 
+          <br><br><h4><center>Properties</center></h4><br>
+	<div class="col-xs-6">Search<input class="form-control ng-pristine ng-valid" ng-model="searchKeyword" type="text"></div><br><br><br>
+			
+			</div>
+<form>
+			<label for="input1" class="control-label">Enter input1: </label>
+<input ng-model="input1" type="text"><br>
+<label for="input2" class="control-label">Enter input2: </label>
+<input ng-model="input2" type="text"><br>
+<label for="input3" class="control-label">Enter input3: </label>
+<input ng-model="input3" type="text"><br>
+<label for="input4" class="control-label">Enter input4: </label>
+<input ng-model="input4" type="text"><br>
+<label for="input5" class="control-label">Enter input5: </label>
+<input ng-model="input5" type="text"><br>
+<label for="input6" class="control-label">Enter input6: </label>
+<input ng-model="input6" type="text"><br>
+<button id="btn-update-product" type="button" class="btn btn-warning" ng-click="predict()">Save changes</button>
+</form>
+</body>
+</div> <!-- end container -->
+
+      <!--Import jQuery before bootstrap.js-->
+      <script type="text/javascript" src="resources/js/jquery-2.2.1.min.js"></script>
+      <script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+	  
+	  <!-- include angular js -->
+	  <script src="resources/js/angular.min.js"></script>
+	  
+	  <!-- controller app -->
+	  <script src="resources/js/app.js"></script>
+
+    </body>
+  </html>
