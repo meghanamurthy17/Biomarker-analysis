@@ -1,4 +1,3 @@
-
 var app = angular.module('products', []);
 
 app.controller('productCTRL', function ($scope, $http) {
@@ -6,11 +5,11 @@ app.controller('productCTRL', function ($scope, $http) {
     $scope.loader = {
         loading: false
     };
+	$scope.display = true
 	
 	$scope.predict = function () {
-		
 		$scope.loader.loading = true;
-        
+        $scope.response = {};
         $http.put('/predict', {
             'input1' : $scope.input1,
 			'input2' : $scope.input2,
@@ -19,11 +18,14 @@ app.controller('productCTRL', function ($scope, $http) {
 			'input5' : $scope.input5,
 			'input6' : $scope.input6
         })
-            .success(function (data, status, headers, config) {
-                console.log("input is passed in put statement");
+            .success(function (response) {
+				$scope.loader.loading = false;
+				$scope.display = false;
+                angular.copy(response, $scope.response);
             })
             .error(function (data, status, headers, config) {
-                $scope.loader.loading = false;
+		console.log('ERROR');
+                $scope.result = false;
                 $scope.modalstatustext = "Unable to pass input!";
             });
 		
