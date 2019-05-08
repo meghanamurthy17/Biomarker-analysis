@@ -6,12 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
       
     <title>Property Application</title>
+ 
+
       <!--Import bootstrap.css-->
       <link type="text/css" rel="stylesheet" href="resources/css/bootstrap.min.css" />
-	  
+
+	
 	  <!-- custom CSS -->
  
 		<style>
+		.loader {
+		  border: 2px solid #a6a6a6;
+		  border-radius: 50%;
+		  border-top: 2px solid black;
+		  width: 20px;
+		  height: 20px;
+		  -webkit-animation: spin 2s linear infinite; /* Safari */
+		  animation: spin 2s linear infinite;
+		}
+		
+		div.transbox {
+  			margin: 30px;
+			  background-color: #ffffff;
+			  border: 1px solid black;
+			  opacity: 0.6;
+			  filter: alpha(opacity=60); /* For IE8 and earlier */
+		}
+
+		/* Safari */
+		@-webkit-keyframes spin {
+		  0% { -webkit-transform: rotate(0deg); }
+		  100% { -webkit-transform: rotate(360deg); }
+		}
+
+		@keyframes spin {
+		  0% { transform: rotate(0deg); }
+		  100% { transform: rotate(360deg); }
+		}
         @font-face {
             font-family: 'Roboto';
             src: url('resources/fonts/roboto/Roboto-Regular.eot');
@@ -22,62 +53,48 @@
             
         body{font-family: "Roboto";
 		font-size:16px;
-		background-image: url("resources/bg3.jpg");
+		background-image: url("resources/backgrounds/6.jpg");
 		background-repeat: no-repeat ;
 		background-position : center;
-		}
+	}
             
-		.width-30-pct{
+	.width-30-pct{
 			width:30%;
-		}
+	}
 		 
-		.margin-bottom-1em{
-			margin-bottom:1em;
-		}
-.header img {
-  float: left;
-  width: 100px;
-  height: 100px;
+	.margin-bottom-1em{
+		margin-bottom:1em;
+	}
+	.header img {
+
+	  float: left;
+	  width: 100px;
+	  height: 100px;
+	}
+
+	div.transbox {
+  width:500px;
+height:400px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.8;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
 }
 
-.header h1 {
-  position: relative;
-  top: 10px;
-  left: 10px;
+div.transbox p {
+
+  font-weight: bold;
+  color: #000000;
+  opacity: 1;
 }
+
+	.header h1 {
+	  position: relative;
+	  top: 10px;
+	  left: 10px;
+	}
 	</style>
-</head>
-
-    <body>
-
-<div class="container" ng-app="products" ng-controller="productCTRL">
-<br>	<h3>Hello, {{user}} !</h3>
-    <div class="row">
-	  <div class="header">
-		 <img src="resources/logo2.jpg"> 
-          <br><br><h4><center>Properties</center></h4><br>
-	<div class="col-xs-6">Search<input class="form-control ng-pristine ng-valid" ng-model="searchKeyword" type="text"></div><br><br><br>
-			
-			</div>
-<form>
-			<label for="input1" class="control-label">Enter input1: </label>
-<input ng-model="input1" type="text"><br>
-<label for="input2" class="control-label">Enter input2: </label>
-<input ng-model="input2" type="text"><br>
-<label for="input3" class="control-label">Enter input3: </label>
-<input ng-model="input3" type="text"><br>
-<label for="input4" class="control-label">Enter input4: </label>
-<input ng-model="input4" type="text"><br>
-<label for="input5" class="control-label">Enter input5: </label>
-<input ng-model="input5" type="text"><br>
-<label for="input6" class="control-label">Enter input6: </label>
-<input ng-model="input6" type="text"><br>
-<button id="btn-update-product" type="button" class="btn btn-warning" ng-click="predict()">Save changes</button>
-</form>
-</body>
-</div> <!-- end container -->
-
-      <!--Import jQuery before bootstrap.js-->
+<!--Import jQuery before bootstrap.js-->
       <script type="text/javascript" src="resources/js/jquery-2.2.1.min.js"></script>
       <script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
 	  
@@ -87,5 +104,73 @@
 	  <!-- controller app -->
 	  <script src="resources/js/app.js"></script>
 
-    </body>
-  </html>
+</head>
+
+<body>
+
+<div class="container" ng-app="products" ng-controller="productCTRL">
+    <div class="row">
+	  <div class="header">
+          	<br><br><h4> <center> Predicting Activity Area</center></h4><br>
+		<center>
+
+			<div class="background">
+  				<div class="transbox">
+   
+					<p><br>
+					<form>
+					<label for="input1" class="control-label">Drug Name: </label>
+					<select ng-model="input1" type="text" id="input1">
+					<option value=1>Erlotinib</option>
+					<option value=2>Lapatinib</option>
+					<option value=3>PHA-665752</option>
+					<option value=4>PF-2341066</option>
+					<option value=5>TAE684</option>
+					<option value=6>Vandetanib</option>
+					<option value=7>Nilotinib</option>
+					<option value=8>AZD0530</option>
+					<option value=9>Sorafenib</option>
+					<option value=10>TKI258</option>
+					<option value=11>PD-0332991 </option>
+					<option value=12>AEW541</option>
+					<option value=13>RAF265</option>
+					<option value=14>PLX4720</option>
+					<option value=15>PD-0325901</option>
+					<option value=16>AZD6244</option>
+					<option value=17>Nutlin-3</option>
+					<option value=18>LBW242</option>
+					<option value=19>17-AAG</option>
+					<option value=20>L-685458</option>
+					<option value=21>Panobinostat  </option>
+					<option value=22>Paclitaxel</option>
+					<option value=23>Irinotecan</option>
+					<option value=24>Topotecan</option>
+					</select><br>
+					<label for="input2" class="control-label">Age: </label>
+					<input ng-model="input2" type="text" id="input2"><br>
+					<label for="input3" class="control-label">Sex: </label>
+					<select ng-model="input3" type="text" id="input3">
+					<option value=1>M</option>
+					<option value=2>F</option>
+					</select><br>
+					<label for="input4" class="control-label">Drug Dose: </label>
+					<input ng-model="input4" type="text" id="input4"><br>
+					<label for="input5" class="control-label">IC50: </label>
+					<input ng-model="input5" type="text" id="input5"><br>
+					<label for="input6" class="control-label">EC50: </label>
+					<input ng-model="input6" type="text" "input6"><br><br><br>
+					<button id="btn-update-product" type="button" class="btn btn-warning" ng-click="predict()">Predict Drug Acivity</button>
+					</form>
+					<br>
+					<div ng-hide = "display"><p>Predicted Activity Area: </p></div>
+					<div ng-hide = "display"><p>{{response.data}} sq.cm.</p></div>
+					<div ng-show = "loader.loading"><p>Please wait, predicting the best output...<div class="loader"></div></p>
+ 				</div>
+			</div>
+
+</center>
+</div>
+</div>
+</div>
+</body>
+</html>

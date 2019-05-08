@@ -17,7 +17,7 @@ var MongoClient = require('mongodb').MongoClient;
 });
   
   app.get('/input', function(req, res) {
-  	res.sendFile(__dirname +"/"+"predict-index.html");
+  	res.sendFile(__dirname +"/public/"+"predict-index.html");
 	  //res.render('predict-disp.ejs');  
   });
   
@@ -33,8 +33,6 @@ var MongoClient = require('mongodb').MongoClient;
     const pyProg = spawn('python', ['./RFmodelPredict.py', input1, input2, input3, input4, input5, input6]);
 
     pyProg.stdout.on('data', function(data) {
-		console.log("in hello.py");
-        console.log(data.toString());
 		var result = data.toString();
 		console.log(result);
 		res.send({'data': result});
