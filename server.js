@@ -13,24 +13,24 @@ var MongoClient = require('mongodb').MongoClient;
     var user;
   
     app.get('/', function (req, res) {
-	res.sendFile( __dirname + "/public" +"/"+ "index1.html" );
+	res.sendFile( __dirname + "/public" +"/"+ "home.html" );
 });
   
   app.get('/input', function(req, res) {
-  	res.sendFile(__dirname + "/public" +"/"+"predict-index.html");
+  	res.sendFile(__dirname +"/"+"predict-index.html");
 	  //res.render('predict-disp.ejs');  
   });
   
   app.put('/predict', function (req, res) {
-	  
-	var input1 = req.body.input1;
+	  console.log(req.body);
+	  var input1 = req.body.input1;
 	  var input2 = req.body.input2;
 	  var input3 = req.body.input3;
 	  var input4 = req.body.input4;
 	  var input5 = req.body.input5;
 	  var input6 = req.body.input6;
     const { spawn } = require('child_process');
-    const pyProg = spawn('python', ['C:/Users/Arundhati/Desktop/Pycharm-edu/DAAlab/RFmodelPredict.py', input1, input2, input3, input4, input5, input6]);
+    const pyProg = spawn('python', ['./RFmodelPredict.py', input1, input2, input3, input4, input5, input6]);
 
     pyProg.stdout.on('data', function(data) {
 		console.log("in hello.py");

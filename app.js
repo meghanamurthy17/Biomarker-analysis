@@ -1,4 +1,3 @@
-
 var app = angular.module('products', []);
 
 app.controller('productCTRL', function ($scope, $http) {
@@ -20,12 +19,14 @@ app.controller('productCTRL', function ($scope, $http) {
 			'input6' : $scope.input6
         })
             .success(function (response) {
-				$scope.loader.loading = false;
+				
+				$scope.result = false;
 				$scope.display = false;
                 angular.copy(response, $scope.response);
             })
             .error(function (data, status, headers, config) {
-                $scope.loader.loading = false;
+		console.log('ERROR');
+                $scope.result = false;
                 $scope.modalstatustext = "Unable to pass input!";
             });
 		

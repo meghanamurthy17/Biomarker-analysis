@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
       
-    <title>Property Application</title>
+    <title>Home</title>
       <!--Import bootstrap.css-->
       <link type="text/css" rel="stylesheet" href="resources/css/bootstrap.min.css" />
 	  
@@ -22,7 +22,7 @@
             
         body{font-family: "Roboto";
 		font-size:16px;
-		background-image: url("resources/bg3.jpg");
+		background-image: url("resources/backgrounds/6.jpg");
 		background-repeat: no-repeat ;
 		background-position : center;
 		}
@@ -40,6 +40,51 @@
   height: 100px;
 }
 
+.ghost-button-size-transition {
+  display: inline-block;
+  width: 600px;
+  height: 50px;
+  line-height: 25px;
+  font-size: 20px;
+  margin: 0 auto;
+  padding: 8px;
+  color: #fff;
+  border: 2px solid #fff;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  background-color: #fff; /* fallback */
+  background-color: rgba(255, 255, 255, 0.4);
+  border-color: #fff; /* fallback */
+  border-color: rgba(255, 255, 255, 0.4);
+  transition: width 0.3s ease-out,
+              height 0.3s ease-out,
+              line-height 0.3s ease-out;
+	      background-color 0.3s ease-out;
+	      border-color 0.3s ease-out;
+}
+.ghost-button-size-transition:hover,
+.ghost-button-size-transition:active {
+  width: 670px;
+  height: 7s0px;
+  line-height: 30px;
+  font-size: 30px;
+  color: white;
+  background-color: #2D243F;
+  border-color: white;
+ 
+  transition: width 0.1s ease-in,
+              height 0.1s ease-in,
+              line-height 0.1s ease-in;
+	      background-color 0.3s ease-out;
+	      border-color 0.3s ease-out;
+
+	
+}
+
+
+
+
 .header h1 {
   position: relative;
   top: 10px;
@@ -51,16 +96,20 @@
     <body>
 
 <div class="container" ng-app="products" ng-controller="productCTRL">
-<br>	<h3>Hello, {{user}} !</h3>
+<br>	
+
+
     <div class="row">
 	  <div class="header">
-		 <img src="resources/logo2.jpg"> 
+		 <!--
+	<img src="resources/logo2.jpg"> 
           <br><br><h4><center>Properties</center></h4><br>
 	<div class="col-xs-6">Search<input class="form-control ng-pristine ng-valid" ng-model="searchKeyword" type="text"></div><br><br><br>
-			
+			-->
 			</div>
 
-			<table class="table table-hover">
+			<!--
+				<table class="table table-hover">
 				<thead>
 					<tr>
 					<th class="width-30-pct"><center>PID</center></th>
@@ -83,7 +132,17 @@
 						<td><center>{{ d.status }}</center></td>
 						<td><center>		
 				</tbody>
-			</table>
+				</table>
+			-->
+		<center>
+			<h2 style="color:white">WELOCME</h2>
+			<br>
+			<br>
+			<a class="ghost-button-size-transition" href="#" style="text-decoration:none">List all the biomarkers identified</a><br><br>
+			<a class="ghost-button-size-transition" href="/input" style="text-decoration:none">Predict Drug Activity</a><br><br>
+			<a class="ghost-button-size-transition" href="#" style="text-decoration:none">Find genes influenced by a biomarker</a><br>
+			
+</center
  
 </body>
 </div> <!-- end container -->
