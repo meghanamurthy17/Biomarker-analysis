@@ -1,0 +1,1 @@
+van den Akker, Jeroen & Mishne, Gilad & D. Zimmer, Anjali & Y. Zhou, Alicia. (2018). A machine learning model to determine the accuracy of variant calls in capture-based next generation sequencing. BMC Genomics. 19. 10.1186/s12864-018-4659-0. 

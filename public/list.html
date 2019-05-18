@@ -1,0 +1,250 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      
+    <title>Biomarkers and their affected genes</title>
+ 
+
+      <!--Import bootstrap.css-->
+      <link type="text/css" rel="stylesheet" href="resources/css/bootstrap.min.css" />
+
+	
+	  <!-- custom CSS -->
+ 
+		<style>
+		.loader {
+		  border: 2px solid #a6a6a6;
+		  border-radius: 50%;
+		  border-top: 2px solid black;
+		  width: 20px;
+		  height: 20px;
+		  -webkit-animation: spin 2s linear infinite; /* Safari */
+		  animation: spin 2s linear infinite;
+		}
+		
+
+		/* Safari */
+		@-webkit-keyframes spin {
+		  0% { -webkit-transform: rotate(0deg); }
+		  100% { -webkit-transform: rotate(360deg); }
+		}
+
+		@keyframes spin {
+		  0% { transform: rotate(0deg); }
+		  100% { transform: rotate(360deg); }
+		}
+        @font-face {
+            font-family: 'Roboto';
+            src: url('resources/fonts/roboto/Roboto-Regular.eot');
+            src: url('resources/fonts/roboto/Roboto-Regular.woff') format('woff'), 
+            url('resources/fonts/roboto/Roboto-Regular.ttf') format('truetype');
+            font-style: normal;
+            }
+            
+        body{font-family: "Roboto";
+		font-size:16px;
+		background-image: url("resources/backgrounds/6.jpg");
+		background-repeat: no-repeat ;
+		background-position : center;
+	}
+            
+	.width-30-pct{
+			width:30%;
+	}
+		 
+	.margin-bottom-1em{
+		margin-bottom:1em;
+	}
+	.header img {
+
+	  float: left;
+	  width: 100px;
+	  height: 100px;
+	}
+
+	div.transbox {
+  width:500px;
+height:70px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.8;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+div.transbox p {
+
+  font-weight: bold;
+  color: #000000;
+  opacity: 1;
+}
+
+	.header h1 {
+	  position: relative;
+	  top: 10px;
+	  left: 10px;
+	}
+
+.label1 {
+
+  
+  display: inline-block;
+  width: 200px;
+  height: 45px;
+  line-height: 25px;
+  font-size: 20px;
+  margin: 0 auto;
+  padding: 8px;
+  color: black;
+  /*border: 2px solid #fff;*/
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  background-color: #fff; /* fallback */
+  
+  /*border-color: #fff; /* fallback */
+  /*border-color: rgba(255, 255, 255, 0.4);
+  transition: width 0.3s ease-out,
+              height 0.3s ease-out,
+              line-height 0.3s ease-out;
+	      background-color 0.3s ease-out;
+	      border-color 0.3s ease-out;*/
+}
+.label2 {
+
+  
+  display: inline-block;
+  width: 900px;
+  height: 100px;
+  line-height: 25px;
+  font-size: 20px;
+  margin: 0 auto;
+  padding: 8px;
+  color: black;
+  /*border: 2px solid #fff;*/
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  background-color: #2D243F; /* fallback */
+  background-color: rgba(255, 255, 255, 0.4)
+  border-color: #fff; /* fallback */
+  border-color: rgba(255, 255, 255, 0.4);
+  /*transition: width 0.3s ease-out,
+              height 0.3s ease-out,
+              line-height 0.3s ease-out;
+	      background-color 0.3s ease-out;
+	      border-color 0.3s ease-out;*/
+}
+	</style>
+<!--Import jQuery before bootstrap.js-->
+      <script type="text/javascript" src="resources/js/jquery-2.2.1.min.js"></script>
+      <script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+	  
+	  <!-- include angular js -->
+	  <script src="resources/js/angular.min.js"></script>
+	  
+	  <!-- controller app -->
+	  <script src="resources/js/listApp.js"></script>
+
+</head>
+
+<body>
+<br>
+<br>
+<br>
+<br>
+<center><div class="label2"><h1 style="color:white">Find the affected genes of a Biomarker!!</h1></div>
+<br>
+<br>
+<div class="container" ng-app="lista" ng-controller="listc">
+<form>
+<label class="label1" for="input1"> Biomarker </label>
+<select ng-model="input1" type="text" id="input1">
+<option value = "ups1"> ups1 </option>
+<option value = "msn1"> msn1 </option>
+<option value = "ade12"> ade12 </option>
+<option value = "tvp23"> tvp23 </option>
+<option value = "cct8"> cct8 </option>
+<option value = "rpl9a"> rpl9a </option>
+<option value = "vps24"> vps24 </option>
+<option value = "ecm30"> ecm30 </option>
+<option value = "APM4 aka PEX12"> APM4 aka PEX12 </option>
+<option value = "pet54"> pet54 </option>
+<option value = "sks1"> sks1 </option>
+<option value = "mon2"> mon2 </option>
+<option value = "cyb5"> cyb5 </option>
+<option value = "bit2"> bit2 </option>
+<option value = "aim18"> aim18 </option>
+<option value = "sed4"> sed4 </option>
+<option value = "sdh4"> sdh4 </option>
+<option value = "kss1"> kss1 </option>
+<option value = "adh4"> adh4 </option>
+<option value = "RPN1"> RPN1 </option>
+<option value = "TAF4"> TAF4 </option>
+<option value = "fol1"> fol1 </option>
+<option value = "mex67"> mex67 </option>
+<option value = "tda7"> tda7 </option>
+<option value = "rim2"> rim2 </option>
+<option value = "lam1"> lam1 </option>
+<option value = "prs4"> prs4 </option>
+<option value = "RPG1"> RPG1 </option>
+<option value = "cox20"> cox20 </option>
+<option value = "nsi1"> nsi1 </option>
+<option value = "pep5"> pep5 </option>
+<option value = "cic1"> cic1 </option>
+<option value = "ste14"> ste14 </option>
+<option value = "med2"> med2 </option>
+<option value = "ccr4"> ccr4 </option>
+<option value = "rpn1"> rpn1 </option>
+<option value = "nop19"> nop19 </option>
+<option value = "ecm29"> ecm29 </option>
+<option value = "pin4"> pin4 </option>
+<option value = "MEX67"> MEX67 </option>
+<option value = "apm4"> apm4 </option>
+<option value = "taf4"> taf4 </option>
+<option value = "CCT8"> CCT8 </option>
+<option value = "hpt1"> hpt1 </option>
+<option value = "bar1"> bar1 </option>
+<option value = "arg8"> arg8 </option>
+<option value = "cyc2"> cyc2 </option>
+<option value = "pef1"> pef1 </option>
+<option value = "cog5"> cog5 </option>
+<option value = "bar1,mei5"> bar1,mei5 </option>
+<option value = "sgt1"> sgt1 </option>
+<option value = "rpl15a"> rpl15a </option>
+<option value = "oaz1"> oaz1 </option>
+<option value = "aro10"> aro10 </option>
+<option value = "mit1"> mit1 </option>
+<option value = "rib1"> rib1 </option>
+<option value = "tfb6"> tfb6 </option>
+<option value = "kap120"> kap120 </option>
+<option value = "mei5"> mei5 </option>
+<option value = "nup53"> nup53 </option>
+<option value = "qns1"> qns1 </option>
+<option value = "cog1"> cog1 </option>
+<option value = "nop1"> nop1 </option>
+<option value = "ecm25"> ecm25 </option>
+<option value = "sdd3"> sdd3 </option>
+<option value = "ram1"> ram1 </option>
+<option value = "jhd1"> jhd1 </option>
+<option value = "nus1"> nus1 </option>
+<option value = "fsf1"> fsf1 </option>
+</select>
+<button id="btn1" type="button" ng-click="listG()">Search</button>
+</form>
+<br>
+
+<div ng-hide = "display" class="transbox" ><h4 style="color:white">
+
+			<p> Activated Genes: {{response.activated}} <br>
+                         Inhibited Genes: {{response.inhibited}} </p>
+                       
+</h4> </div>
+<br>
+<br>
+</div>
+</center>
+</body>
+

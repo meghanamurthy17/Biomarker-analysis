@@ -2,12 +2,20 @@ var express = require('express');
 var app = express();
 var bodyParser = require("body-parser");
 var id;
+var collection;
  var ObjectID = require('mongodb').ObjectID;
 //STATIC FILES
 app.use(express.static('public'));
 app.use(bodyParser.json()); // Body parser use JSON data
 
 var MongoClient = require('mongodb').MongoClient;
+MongoClient.connect("mongodb://127.0.0.1:27017/BIOM_GENES",function(err,client){
+	if(!err){
+		console.log("We are connected");
+		const db = client.db('BIOM_GENES');
+		collection = db.collection('list2');
+	}
+});
   
   var json1={};
     var user;
@@ -39,7 +47,22 @@ var MongoClient = require('mongodb').MongoClient;
     });
 })
 
-  
+  app.get('/list_index',function (req,res){
+	res.sendFile(__dirname + "/public/list.html");
+});
+
+  app.put('/list',function(req,res){
+	console.log(req.body);
+	var biom = req.body.input1;
+	var list2 ;
+	collection.find({"name":biom}).toArray(function(err,results){
+		list2 = results[0];
+		console.log(list2);
+		res.send({'activated':Object.keys(list2.activated),'inhibited':Object.keys(list2.inhibited)});
+})
+	
+	
+});
 // Connect to the db
 MongoClient.connect('mongodb://localhost', function (err, client) {
   if (err) throw err;

@@ -1,0 +1,147 @@
+  <!DOCTYPE html>
+  <html>
+    <head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      
+    <title>Home</title>
+      <!--Import bootstrap.css-->
+      <link type="text/css" rel="stylesheet" href="resources/css/bootstrap.min.css" />
+	  
+	  <!-- custom CSS -->
+ 
+		<style>
+        @font-face {
+            font-family: 'Roboto';
+            src: url('resources/fonts/roboto/Roboto-Regular.eot');
+            src: url('resources/fonts/roboto/Roboto-Regular.woff') format('woff'), 
+            url('resources/fonts/roboto/Roboto-Regular.ttf') format('truetype');
+            font-style: normal;
+            }
+            
+        body{font-family: "Roboto";
+		font-size:16px;
+		background-image: url("resources/backgrounds/6.jpg");
+		background-repeat: no-repeat ;
+		background-position : center;
+		}
+            
+		.width-30-pct{
+			width:30%;
+		}
+		 
+		.margin-bottom-1em{
+			margin-bottom:1em;
+		}
+.header img {
+  float: left;
+  width: 100px;
+  height: 100px;
+}
+
+.ghost-button-size-transition {
+  display: inline-block;
+  width: 600px;
+  height: 50px;
+  line-height: 25px;
+  font-size: 20px;
+  margin: 0 auto;
+  padding: 8px;
+  color: #fff;
+  border: 2px solid #fff;
+  text-align: center;
+  outline: none;
+  text-decoration: none;
+  background-color: #fff; /* fallback */
+  background-color: rgba(255, 255, 255, 0.4);
+  border-color: #fff; /* fallback */
+  border-color: rgba(255, 255, 255, 0.4);
+  transition: width 0.3s ease-out,
+              height 0.3s ease-out,
+              line-height 0.3s ease-out;
+	      background-color 0.3s ease-out;
+	      border-color 0.3s ease-out;
+}
+.ghost-button-size-transition:hover,
+.ghost-button-size-transition:active {
+  width: 670px;
+  height: 7s0px;
+  line-height: 30px;
+  font-size: 30px;
+  color: white;
+  background-color: #2D243F;
+  border-color: white;
+ 
+  transition: width 0.1s ease-in,
+              height 0.1s ease-in,
+              line-height 0.1s ease-in;
+	      background-color 0.3s ease-out;
+	      border-color 0.3s ease-out;
+
+	
+}
+
+
+
+
+.header h1 {
+  position: relative;
+  top: 10px;
+  left: 10px;
+}
+	</style>
+</head>
+
+    <body>
+
+<div class="container" ng-app="products" ng-controller="productCTRL">
+<br>	
+
+
+    <div class="row">
+	  <div class="header">
+<center style="color:white">
+<h1> IDENTIFIED BIOMARKERS </h1>
+<br>
+<br>
+<p>
+
+APM4 AKA PEX12 			CCT8 			MEX67 			RPG1 			RPN1 			TAF4 			ADE12 			ADH4 			<p>
+
+AIM18 			APM4 			ARG8 			ARO10 			BAR1 			BAR1,MEI5 			BIT2 			CCR4 			<p>
+
+CCT8 			CIC1 			COG1 			COG5 			COX20 			CYB5 			CYC2 			ECM25 			<p>
+
+ECM29 			ECM30 			FOL1 			FSF1 			HPT1 			JHD1 			KAP120 			KSS1 			<p>
+
+LAM1 			MED2 			MEI5 			MEX67 			MIT1 			MON2 			MSN1 			NOP1 			<p>
+
+NOP19 			NSI1 			NUP53 			NUS1 			OAZ1 			PEF1 			PEP5 			PET54 			<p>
+
+PIN4 			PRS4 			QNS1 			RAM1 			RIB1 			RIM2 			RPL15A 			RPL9A 			<p>
+
+RPN1 			SDD3 			SDH4 			SED4 			SGT1 			SKS1 			STE14 			TAF4 			<p>
+
+TDA7 			TFB6 			TVP23 			UPS1 			VPS24 
+
+
+
+			
+</center>
+ 
+</body>
+</div> <!-- end container -->
+
+      <!--Import jQuery before bootstrap.js-->
+      <script type="text/javascript" src="resources/js/jquery-2.2.1.min.js"></script>
+      <script type="text/javascript" src="resources/js/bootstrap.min.js"></script>
+	  
+	  <!-- include angular js -->
+	  <script src="resources/js/angular.min.js"></script>
+	  
+	  <!-- controller app -->
+	  <script src="resources/js/app.js"></script>
+
+    </body>
+  </html>
